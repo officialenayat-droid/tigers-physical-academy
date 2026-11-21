@@ -46,7 +46,7 @@ const jsonLd = {
   name: site.name,
   description: site.description,
   url: site.url,
-  telephone: site.contact.phoneDisplay, // TODO: placeholder number
+  telephone: site.contact.phoneHref.replace("tel:", ""),
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.line1,

@@ -73,7 +73,7 @@ export default function Footer() {
                 {site.address.city}, J&amp;K {site.address.postalCode}
               </span>
             </a>
-            {/* TODO: placeholder phone + email (see lib/site.ts) */}
+            {/* TODO: placeholder email (see lib/site.ts) */}
             <a href={site.contact.phoneHref} className="flex gap-3 hover:text-gold-bright">
               <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {site.contact.phoneDisplay}
             </a>

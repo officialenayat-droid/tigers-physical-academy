@@ -55,7 +55,7 @@ Search the codebase for `TODO` to find every placeholder.
 | What | Where |
 | --- | --- |
 | **Founder photo.** `public/images/imran_tiger.jpg` is currently a labelled placeholder. Drop the real photo in with the same filename. Adjust `images.founder.position` if his face needs re-centring. | `public/images/`, `lib/images.ts` |
-| Phone / WhatsApp (+91 98765 43210 is **fake**), email | `lib/site.ts` |
+| Email address (phone and WhatsApp are set to +91 70062 32991) | `lib/site.ts` |
 | Production domain (set to `https://teamtiger.in`; override with `NEXT_PUBLIC_SITE_URL`) | `lib/site.ts` → `url` |
 | Product names, prices, images | `lib/products.ts` |
 | Batch dates, timings, seat counts | `lib/content.ts` → `nextBatch` |

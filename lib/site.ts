@@ -18,9 +18,9 @@ export const site = {
   },
 
   contact: {
-    // TODO: replace with the academy's real phone number. +91 98765 43210 is FAKE.
-    phoneDisplay: "+91 98765 43210",
-    phoneHref: "tel:+919876543210",
+    // One number for calls and WhatsApp.
+    phoneDisplay: "+91 70062 32991",
+    phoneHref: "tel:+917006232991",
     // WhatsApp: international format, digits only (used in wa.me links).
     whatsapp: "917006232991",
     whatsappDisplay: "+91 70062 32991",
