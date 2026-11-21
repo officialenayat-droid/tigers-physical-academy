@@ -18,11 +18,12 @@ export const site = {
   },
 
   contact: {
-    // TODO: replace with the academy's real numbers. +91 98765 43210 is FAKE.
+    // TODO: replace with the academy's real phone number. +91 98765 43210 is FAKE.
     phoneDisplay: "+91 98765 43210",
     phoneHref: "tel:+919876543210",
-    // TODO: real WhatsApp number in international format, digits only.
-    whatsapp: "919876543210",
+    // WhatsApp: international format, digits only (used in wa.me links).
+    whatsapp: "917006232991",
+    whatsappDisplay: "+91 70062 32991",
     // TODO: replace with the real email address.
     email: "hello@tigersphysicalacademy.in",
   },
