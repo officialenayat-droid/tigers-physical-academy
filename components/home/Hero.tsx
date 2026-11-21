@@ -93,7 +93,7 @@ export default function Hero() {
           >
             <span className="relative h-14 w-14 shrink-0 overflow-hidden clip-hex bg-gold">
               <span className="absolute inset-[2px] overflow-hidden clip-hex">
-                <Image src={images.founder.src} alt="" fill sizes="56px" className="object-cover" style={{ objectPosition: images.founder.position }} />
+                <Image src={images.founderAvatar.src} alt="" fill sizes="56px" className="object-cover" />
               </span>
             </span>
             <span>

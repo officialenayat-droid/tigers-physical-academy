@@ -14,9 +14,11 @@ export const images = {
   // REAL photo of Imran "Tiger" Ahmad. Keep this. object-position keeps his face in frame.
   founder: {
     src: "/images/imran_tiger.jpg",
-    alt: "Imran Ahmad “Tiger”, founder of Tiger's Physical Academy, Srinagar",
-    position: "50% 20%",
+    alt: "Imran Ahmad “Tiger”, founder of Tiger's Physical Academy, Srinagar, standing beside an armoured vehicle in the snow",
+    position: "45% 25%",
   },
+  // Tight face crop of the founder photo, used in small badges.
+  founderAvatar: { src: "/images/imran_tiger_avatar.jpg", alt: "Imran “Tiger” Ahmad" },
 
   // TODO: replace placeholders below with Tiger's own photos.
   hero: { src: u("1526506118085-60ce8714f8c5"), alt: "Athlete hanging from a pull-up bar in a dark gym", position: "50% 30%" },

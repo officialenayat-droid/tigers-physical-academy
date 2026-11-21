@@ -43,7 +43,7 @@ lib/
   products.ts         Store catalogue
   testimonials.ts     Trainee quotes
   content.ts          Disciplines, routine, standards, batches, drills, gallery, press
-public/images/        Local images (imran_tiger.jpg)
+public/images/        Local images (imran_tiger.jpg founder photo, imran_tiger_avatar.jpg face crop)
 public/og.png         Social share image
 public/.htaccess      Apache config for Hostinger (404 page, HTTPS, caching)
 ```
@@ -54,7 +54,6 @@ Search the codebase for `TODO` to find every placeholder.
 
 | What | Where |
 | --- | --- |
-| **Founder photo.** `public/images/imran_tiger.jpg` is currently a labelled placeholder. Drop the real photo in with the same filename. Adjust `images.founder.position` if his face needs re-centring. | `public/images/`, `lib/images.ts` |
 | Production domain (set to `https://teamtiger.in`; override with `NEXT_PUBLIC_SITE_URL`) | `lib/site.ts` → `url` |
 | Product names, prices, images | `lib/products.ts` |
 | Batch dates, timings, seat counts | `lib/content.ts` → `nextBatch` |
