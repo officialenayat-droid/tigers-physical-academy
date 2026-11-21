@@ -24,8 +24,7 @@ export const site = {
     // WhatsApp: international format, digits only (used in wa.me links).
     whatsapp: "917006232991",
     whatsappDisplay: "+91 70062 32991",
-    // TODO: replace with the real email address.
-    email: "hello@tigersphysicalacademy.in",
+    email: "loneimraan554@gmail.com",
   },
 
   address: {

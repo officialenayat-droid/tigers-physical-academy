@@ -85,7 +85,6 @@ export default function ContactPage() {
             <Reveal y={40} delay={0.1}>
               <div className="border border-gold/15 bg-coal p-6 sm:p-8">
                 <p className="label text-[0.62rem] text-gold">Direct Lines</p>
-                {/* TODO: placeholder email (lib/site.ts) */}
                 <ul className="mt-5 space-y-4 text-sm">
                   <li>
                     <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-cream/80 hover:text-gold-bright">
