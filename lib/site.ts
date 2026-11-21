@@ -6,8 +6,7 @@
 export const site = {
   name: "Tiger's Physical Academy",
   shortName: "TPA",
-  // TODO: set to the real production domain once it is connected in Vercel.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tigersphysicalacademy.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://teamtiger.in",
   tagline: "Kashmir's First Calisthenics & Physical Academy",
   description:
     "Tiger's Physical Academy, Srinagar: Kashmir's first calisthenics academy, founded by Imran Ahmad “Tiger”, the first certified calisthenics athlete from Kashmir. Calisthenics, parkour, self-defence (girls and women welcome), army and police fitness prep, and nutrition coaching.",

@@ -13,11 +13,18 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-Production build (static export):
+Production build (Node.js server, the default):
 
 ```bash
-npm run build      # writes the finished site to /out
-npm start          # preview /out locally
+npm run build
+npm start
+```
+
+Static export (for hosting without Node.js):
+
+```bash
+npm run build:static   # writes plain HTML/CSS/JS to /out
+npm run preview:static # preview /out locally
 ```
 
 ## Project structure
@@ -49,7 +56,7 @@ Search the codebase for `TODO` to find every placeholder.
 | --- | --- |
 | **Founder photo.** `public/images/imran_tiger.jpg` is currently a labelled placeholder. Drop the real photo in with the same filename. Adjust `images.founder.position` if his face needs re-centring. | `public/images/`, `lib/images.ts` |
 | Phone / WhatsApp (+91 98765 43210 is **fake**), email | `lib/site.ts` |
-| **Production domain**: set it to your Hostinger domain before building, or SEO links and the share image will point to the wrong site | `lib/site.ts` → `url` |
+| Production domain (set to `https://teamtiger.in`; override with `NEXT_PUBLIC_SITE_URL`) | `lib/site.ts` → `url` |
 | Product names, prices, images | `lib/products.ts` |
 | Batch dates, timings, seat counts | `lib/content.ts` → `nextBatch` |
 | Daily routine times, physical standards, success stories | `lib/content.ts` |
@@ -71,30 +78,32 @@ Once no Unsplash images remain, you can remove `remotePatterns` from `next.confi
 - **Store:** filter, Add to Cart and the cart total are UI only (local state). Connect Shopify, Razorpay or similar later.
 - **Contact form:** checks the fields, then opens WhatsApp with the enquiry pre-filled. No server is needed.
 
-## Deploy to Hostinger (shared hosting)
+## Deploy to Hostinger (Node.js / Git deploy, recommended)
 
-The site is a **static export**: `npm run build` produces plain HTML, CSS and JS in `/out`. No Node.js is needed on the server.
+hPanel → **Websites → Add website → Node.js app → Import from GitHub**, pick this repository, then:
 
-1. Set your domain in `lib/site.ts` (`url: "https://yourdomain.com"`).
-2. Build on your computer:
-   ```bash
-   npm install
-   ```
-   ```bash
-   npm run build
-   ```
-3. In Hostinger **hPanel → Websites → Manage → File Manager**, open `public_html` and delete the default `default.php` / `index.php` if present.
-4. Upload **everything inside** `/out` (not the folder itself) into `public_html`. Easiest: zip the contents of `out`, upload the zip, then right-click → **Extract**.
-5. Make sure the hidden `.htaccess` file was uploaded too (File Manager → Settings → show hidden files).
-6. Visit your domain. Enable free SSL in hPanel → **Security → SSL** if it isn't on yet.
+| Setting | Value |
+| --- | --- |
+| Framework preset | Next.js |
+| Branch | `main` |
+| Node version | 22.x |
+| Root directory | `./` |
+| Build command | `npm run build` (default) |
+| Start command | `npm start` (default) |
+| Environment variables | none needed |
 
-To update the site later, rebuild and re-upload the contents of `/out`.
+Click **Deploy**. Every push to `main` can redeploy the site. Turn on SSL for the domain in hPanel if it isn't on already.
 
-**Optional: auto-deploy from GitHub.** hPanel → **Advanced → Git** can pull this repository into `public_html`, but it doesn't run `npm run build`. If you want that, build locally and commit the `/out` folder to a separate branch, or use a GitHub Action to build and FTP-upload `/out`.
+## Deploy to Hostinger (shared hosting, no Node.js)
+
+1. `npm install && npm run build:static`
+2. hPanel → **File Manager → public_html**: delete the default `index.php` / `default.php`.
+3. Upload **everything inside** `/out` (zip it, upload, right-click → Extract).
+4. Make sure the hidden `.htaccess` was uploaded (File Manager settings → show hidden files).
 
 ## Deploy to Vercel (alternative)
 
-Import the repository at [vercel.com/new](https://vercel.com/new) and click **Deploy**. The static export works there unchanged.
+Import the repository at [vercel.com/new](https://vercel.com/new) and click **Deploy**. No settings needed.
 
 ## Notes
 - Animations respect `prefers-reduced-motion`.
