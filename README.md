@@ -72,7 +72,7 @@ Put files in `public/images/` and edit `lib/images.ts`, e.g.
 hero: { src: "/images/hero.jpg", alt: "Tiger on the bars at Bemina", position: "50% 30%" },
 ```
 
-Once no Unsplash images remain, you can remove `remotePatterns` from `next.config.ts`.
+Images are served as-is (no automatic resizing), so export your photos at about 2000px wide and compress them. Once no Unsplash images remain, you can remove `remotePatterns` from `next.config.mjs`.
 
 ## Store and contact (no backend yet)
 - **Store:** filter, Add to Cart and the cart total are UI only (local state). Connect Shopify, Razorpay or similar later.
@@ -88,11 +88,13 @@ hPanel → **Websites → Add website → Node.js app → Import from GitHub**, 
 | Branch | `main` |
 | Node version | 22.x |
 | Root directory | `./` |
-| Build command | `npm run build` (default) |
+| Build command | `npm run build` (default; runs `next build --webpack`) |
 | Start command | `npm start` (default) |
 | Environment variables | none needed |
 
-Click **Deploy**. Every push to `main` can redeploy the site. Turn on SSL for the domain in hPanel if it isn't on already.
+Click **Deploy**. Every push to `main` can redeploy the site.
+
+> **Why webpack and `next.config.mjs`?** Hostinger's build servers have an old system C library (glibc < 2.29), so Next.js' native compiler can't load and it falls back to WebAssembly. That fallback cannot run Turbopack or compile a TypeScript config. Keep the config as `next.config.mjs` and keep `--webpack` in the build scripts. Image resizing is also off (`images.unoptimized`) because the native `sharp` library may not load there either. Turn on SSL for the domain in hPanel if it isn't on already.
 
 ## Deploy to Hostinger (shared hosting, no Node.js)
 

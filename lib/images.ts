@@ -6,7 +6,7 @@
  * e.g. hero: img("/images/hero.jpg"). Nothing else needs to change.
  */
 
-const u = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&q=80&w=2000`;
+const u = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&q=75&w=1600`;
 
 export type SiteImage = { src: string; alt: string; /** CSS object-position, keeps faces in frame */ position?: string };
 
